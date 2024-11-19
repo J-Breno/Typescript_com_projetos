@@ -50,8 +50,21 @@ if(produto instanceof Jogo) {
     console.log(produto.jogadores)  
 }
 
-const link = document.getElementById("origamid");
+// const link = document.getElementById("origamid");
 
-if(link instanceof HTMLAnchorElement) {
-    link.href = link.href.replace("http://", "https://");
-}
+// if(link instanceof HTMLAnchorElement) {
+//     link.href = link.href.replace("http://", "https://");
+// }
+
+const link = document.querySelectorAll(".link");
+
+Array.from(link);
+
+link.forEach(item => {
+    // console.log(item.__proto__.__proto__) para saber quem herda quem
+    if(item instanceof HTMLElement){
+
+        item.style.color = "red";
+        item.style.border = "2px solid #000"
+    }
+});
